@@ -1,0 +1,45 @@
+/*program to read in a list of numbers and to write them out in reverse order*/
+	#include <stdio.h>
+	
+    #define MAX 4	  /* size of array	*/
+   
+   int main()  
+   {
+       char delay;
+       int table[MAX];	  /* declare array    */
+       int i, index=0;	 /* index for the array */
+      
+      
+	   do
+	   {
+         printf("Enter an integer : ");
+         scanf("%d",&table[index++]);          
+       }while (index < MAX);
+      
+      
+    
+  /* write out numbers in reverse */
+	for (i=index-1; i>=0; i--)
+       printf("%d\n",table[i]);
+ 
+ 	float totalnumbers=0;
+ 	float avgEvenNum=0;
+ 	float totalEvenNum=0;
+ 	float avg = 0;
+ 	float EvenNumCount = 0;
+   	for (i=index-1; i>=0; i--){
+   		int j = table[i];
+   		if(j%2==0){
+   		totalEvenNum = totalEvenNum + j;
+   		EvenNumCount = EvenNumCount + 1;
+		}
+   		totalnumbers = totalnumbers + 1;
+	   }
+    avgEvenNum = (EvenNumCount / totalnumbers)*100;
+    avg = totalEvenNum / EvenNumCount;
+    printf("Count Numbers: %.0f\n",totalnumbers);
+    printf("Count Even Numbers: %.0f\n",EvenNumCount);
+    printf("Average of even numbers: %.0f%%\n",avgEvenNum);
+    printf("Even Number Average: %.2f\n",avg);
+} //end program
+
